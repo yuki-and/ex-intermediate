@@ -9,6 +9,12 @@ import org.springframework.transaction.annotation.Transactional;
 import com.example.domain.Team;
 import com.example.repository.TeamRepository;
 
+/**
+ * 球団関連機能の業務処理を行うサービス.
+ * 
+ * @author yukiando
+ *
+ */
 @Service
 @Transactional
 public class TeamService {
@@ -16,7 +22,22 @@ public class TeamService {
 	@Autowired
 	private TeamRepository teamrepository;
 	
+	/**
+	 * 球団情報を全件取得する.
+	 * 
+	 * @return 球団リスト
+	 */
 	public List<Team> showList(){
 		return teamrepository.findAll();
+	}
+	
+	/**
+	 * IDから球団情報を取得する.
+	 * 
+	 * @param id　ID
+	 * @return　球団情報
+	 */
+	public Team showDetail(Integer id) {
+		return teamrepository.load(id);
 	}
 }
