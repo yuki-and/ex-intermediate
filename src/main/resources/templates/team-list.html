@@ -9,7 +9,7 @@
 	<div th:each="team:${teamList}">
 		<a th:href="@{'/team/showDetail/?id=' + ${team.id}}"> <span
 			th:text="${team.teamName}"></span>
-		</a><br>
+		</a>
 	</div>
 </body>
 </html>
