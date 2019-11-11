@@ -20,7 +20,7 @@ import com.example.repository.TeamRepository;
 public class TeamService {
 
 	@Autowired
-	private TeamRepository teamrepository;
+	private TeamRepository teamRepository;
 	
 	/**
 	 * 球団情報を全件取得する.
@@ -28,7 +28,7 @@ public class TeamService {
 	 * @return 球団リスト
 	 */
 	public List<Team> showList(){
-		return teamrepository.findAll();
+		return teamRepository.findAll();
 	}
 	
 	/**
@@ -38,6 +38,6 @@ public class TeamService {
 	 * @return　球団情報
 	 */
 	public Team showDetail(Integer id) {
-		return teamrepository.load(id);
+		return teamRepository.load(id);
 	}
 }

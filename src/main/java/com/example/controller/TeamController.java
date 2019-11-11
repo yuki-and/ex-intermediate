@@ -57,6 +57,6 @@ public class TeamController {
 	 */
 	@RequestMapping("/backPage")
 	public String backPage() {
-		return "redirect:team/showList";
+		return "redirect:/team/showList";
 	}
 }
